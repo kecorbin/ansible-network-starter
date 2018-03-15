@@ -1,0 +1,29 @@
+---
+- name: Gather common information from all devices
+  hosts: all
+  connection: local
+  gather_facts: no
+  tasks:
+    - name: "Gathering Common Output"
+      nxos_command:
+        commands: "{{ generic_commands }}"
+        provider: "{{ cli }}"
+      register: common_output
+
+    - debug:
+        var: common_output.stdout_lines
+
+
+- hosts: vpc
+  connection: local
+  gather_facts: no
+  tasks:
+    - name: "Gather VPC output"
+      tags: vpc
+      nxos_command:
+        commands: "{{ vpc_commands }}"
+        provider: "{{ cli }}"
+      register: vpc_output
+
+    - debug:
+        var: vpc_output.stdout_lines

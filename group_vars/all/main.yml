@@ -1,0 +1,14 @@
+---
+cli:
+  host: "{{ ansible_host }}"
+  transport: cli
+
+ansible_python_interpreter: "/usr/bin/env python"
+
+generic_commands:
+  - show version
+  - show interface
+
+vpc_commands:
+  - show vpc
+  - show vpc consistency-parameters global

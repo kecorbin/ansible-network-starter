@@ -1,0 +1,17 @@
+all:
+  children:
+    vpc:
+      hosts:
+        # While it can be done, the preferred practice in Ansible is to not
+        # store variables in the main inventory file.
+        # http://docs.ansible.com/ansible/latest/intro_inventory.html
+        agg3:
+          ansible_host: 10.94.242.173
+
+        agg4:
+          ansible_host: 10.94.242.174
+  hosts:
+    leaf5:
+      ansible_host: 10.94.242.175
+    leaf6:
+      ansible_host: 10.94.242.176
