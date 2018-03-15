@@ -92,7 +92,8 @@ isolates our dependencies into a known good runtime environment.
 **NOTE:** This assumes you have docker installed on your machine, if you do not they have
 great docs on installing docker on various platforms [here](https://docs.docker.com/install/)
 
-To package your playbook up in docker, you can run the following
+To package your playbook up in docker, you can run the following **If you are actively developing
+a playbook, you'll need to repeat this step each time you make changes!!**
 
 ```
   docker build -t my-awesome-playbook .
